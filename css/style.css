@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Redressed&display=swap");
+
+@keyframes BlinkingBorder {
+  0% {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+  }
+  100% {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+.hidden {
+  display: none;
+}
+.cancel {
+  text-decoration: line-through;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.date-today {
+  margin: 120px 0 0 0;
+  font-size: 25px;
+  color: white;
+  opacity: 0.8;
+}
+
+#clock {
+  font-size: 100px;
+  color: white;
+  opacity: 0.8;
+  margin-top: -15px;
+  margin-bottom: 40px;
+}
+
+#login-form {
+  margin-top: 10px;
+}
+
+#login-form input {
+  border: none;
+  font-size: 25px;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  background-color: inherit;
+  color: white;
+}
+
+#login-form input::placeholder {
+  color: white;
+}
+
+#login-form input:focus {
+  border-bottom-color: white;
+  animation: BlinkingBorder 1s ease-in-out infinite;
+}
+
+#greeting {
+  margin-top: 0;
+  font-size: 35px;
+  color: white;
+}
+
+#todo-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#todo-form input {
+  background-color: inherit;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 200px;
+  text-align: center;
+}
+
+#todo-form input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+li {
+  color: white;
+  margin-bottom: 8px;
+}
+li span {
+  margin-right: 25px;
+  margin-left: 15px;
+}
+
+li button {
+  border: none;
+  transition: transform 0.1s ease-in-out;
+  background-color: inherit;
+}
+li button:first-child {
+  color: green;
+}
+
+li button:hover {
+  transform: scale(1.2);
+}
+
+#quote {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  font-family: Redressed;
+}
+
+#weather {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  opacity: 0.8;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#weather span {
+  margin-bottom: 4px;
+}
+
+#weather span:first-child {
+  font-size: 35px;
+}
+
+#weather span:nth-child(2) {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+#weather span:last-child {
+  font-size: 14px;
+}
+
+#screen {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.6;
+}
+
+img {
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
